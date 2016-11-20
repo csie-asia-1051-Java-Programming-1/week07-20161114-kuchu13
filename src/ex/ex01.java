@@ -12,18 +12,22 @@ import java.util.Scanner;
 public class ex01 {
 
 	public static void main(String[] args) {
-		Scanner scn =new Scanner(System.in);
-		int v1 =scn.nextInt();
-		int data[] = new int[v1];
-		for(int i=0;i<v1;i++){
-			data[i]=scn.nextInt();
+		Scanner scn = new Scanner(System.in);
+		int v1 = scn.nextInt();
+		float data[] = new float[v1];
+		float sum = 0;
+		for (int i = 0; i < v1; i++) {
+			data[i] = scn.nextInt();
+			sum = sum + data[i];
 		}
-//		System.out.println(var(v1,data));
-//	}
-//	public static int var(int v2, int[] v3){
-//		
-//		
+		System.out.println(var(data, v1, sum / v1) / v1);
+	}
 
-		System.out.println(data);
+	public static float var(float data[], int v1, float sum) {
+		float v2 = 0;
+		for (int i = 0; i < v1; i++) {
+			v2 = (float) (v2 + Math.pow(data[i] - sum, 2));
+		}
+		return v2;
 	}
 }
